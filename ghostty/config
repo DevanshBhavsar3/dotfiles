@@ -43,9 +43,17 @@
 # resize-overlay-duration = 4s 200ms
 
 
-command = /usr/bin/zsh --login --interactive
-# font-family = Meslo LGS Nerd Font Mono
+# command = /usr/bin/zsh --login --interactive
+# font-family = JetBrainsMono
+
+# Appearence
 cursor-style = block
-theme = Everforest Dark - Hard 
+theme = GitHub-Dark-Default
 font-size = 16
 gtk-titlebar = false
+
+# Keybindings
+keybind = ctrl+z=close_surface
+keybind = ctrl+d=new_split:right
+keybind = ctrl+h=new_split:down
+
