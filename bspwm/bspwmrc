@@ -4,32 +4,30 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d 1 2 3 4 5
 
-bspc config border_width            2
-bspc config window_gap              0
-bspc config split_ratio             0.52
+bspc config border_width            1
+bspc config radius                  0 
+bspc config window_gap              10
+bspc config split_ratio             0.50
 bspc config borderless_monocle      true
 bspc config gapless_monocle         true
 bspc config focus_follows_pointer   true
 bspc config pointer_follows_focus   true
 bspc config pointer_follows_monitor true
-bspc config active_border_color    \#74adff
-bspc config normal_border_color    \#2e4566
+# bspc config active_border_color    \#74adff
+# bspc config normal_border_color    \#2e4566
 
 # Monitor setup
-xrandr --setprovideroutputsource modesetting NVIDIA-0 && xrandr --auto
+xrandr --setprovideroutputsource modesetting NVIDIA-G0 && xrandr --auto
 
 # Wallpaper
-feh --bg-scale ~/Pictures/Wallpapers/onedark-arch.png &
+feh --bg-scale "/home/devansh/Pictures/Wallpapers/loupe-mono-dark.jpg" &
 
 # Merge Xresources
-xrdb -merge ~/.Xresources &
+# xrdb -merge ~/.Xresources &
 
 # Background apps
 copyq &
 picom &
-nm-applet &
-xss-lock --transfer-sleep-lock -- i3lock --nofork &
-dex --autostart --environment bspwm &
 
 # Polybar
 ~/.config/polybar/launch_polybar.sh &

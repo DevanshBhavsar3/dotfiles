@@ -5,7 +5,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -16,7 +16,7 @@ vim.g.have_nerd_font = false
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
@@ -197,6 +197,48 @@ require("lazy").setup({
 			require("areyoulockedin").setup({
 				session_key = "0af52493-7316-45d3-9203-de061f6220c9",
 			})
+		end,
+	},
+	{
+		"mikavilpas/yazi.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			-- check the installation instructions at
+			-- https://github.com/folke/snacks.nvim
+			"folke/snacks.nvim",
+		},
+		keys = {
+			-- 👇 in this section, choose your own keymappings!
+			{
+				"<leader>-",
+				mode = { "n", "v" },
+				"<cmd>Yazi<cr>",
+				desc = "Open yazi at the current file",
+			},
+			{
+				-- Open in the current working directory
+				"<leader>cw",
+				"<cmd>Yazi cwd<cr>",
+				desc = "Open the file manager in nvim's working directory",
+			},
+			{
+				"<c-up>",
+				"<cmd>Yazi toggle<cr>",
+				desc = "Resume the last yazi session",
+			},
+		},
+		opts = {
+			-- if you want to open yazi instead of netrw, see below for more info
+			open_for_directories = false,
+			keymaps = {
+				show_help = "<f1>",
+			},
+		},
+		-- 👇 if you use `open_for_directories=true`, this is recommended
+		init = function()
+			-- More details: https://github.com/mikavilpas/yazi.nvim/issues/802
+			-- vim.g.loaded_netrw = 1
+			vim.g.loaded_netrwPlugin = 1
 		end,
 	},
 
@@ -838,16 +880,27 @@ require("lazy").setup({
 		-- change the command in the config to whatever the name of that colorscheme is.
 		--
 		-- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-		"catppuccin/nvim",
-		priority = 1000, -- Make sure to load this before all the other start plugins.
+		"zenbones-theme/zenbones.nvim",
+		dependencies = "rktjmp/lush.nvim",
 		config = function()
 			---@diagnostic disable-next-line: missing-fields
 
 			-- Load the colorscheme here.
 			-- Like many other themes, this one has different styles, and you could load
 			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-			vim.cmd.colorscheme("catppuccin-mocha")
 		end,
+	},
+	{
+		"RRethy/base16-nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd("colorscheme base16-black-metal-gorgoroth")
+		end,
+	},
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
 	},
 
 	-- Highlight todo, notes, etc in comments

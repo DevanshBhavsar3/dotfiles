@@ -34,7 +34,7 @@ XF86AudioMicMute
 
 # terminal emulator
 alt + Return
-	ghostty
+	ghostty	
 
 # program launcher
 alt + d
