@@ -27,6 +27,7 @@ vim.opt.backspace = "start,eol,indent"
 vim.opt.path:append({ "**" })
 vim.opt.wildignore:append({ "*/node_modules/*" })
 -- vim.opt.signcolumn = 'no'
+vim.diagnostic.enable(false)
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
@@ -47,4 +48,19 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
-vim.diagnostic.enable(false)
+vim.api.nvim_create_autocmd("FileType", {
+	group = vim.api.nvim_create_augroup("treesitter_attach", { clear = true }),
+	callback = function(ev)
+		local lang = ev.match, vim.treesitter.language.get_lang(ev.match)
+		if not lang then
+			return
+		end
+
+		local ok = pcall(vim.treesitter.get_parser, ev.buf, lang)
+		if not ok then
+			return
+		end
+
+		pcall(vim.treesitter.start, ev.buf)
+	end,
+})

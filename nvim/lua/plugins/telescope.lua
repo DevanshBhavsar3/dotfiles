@@ -25,6 +25,11 @@ return {
 				mappings = {
 					n = {
 						["q"] = actions.close,
+						["<c-d>"] = actions.delete_buffer,
+						["dd"] = actions.delete_buffer,
+					},
+					i = {
+						["<c-d>"] = actions.delete_buffer,
 					},
 				},
 			},
