@@ -7,7 +7,7 @@ keymap.set("n", "x", '"_x')
 keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yanking" })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Increment/Decrement
 keymap.set("n", "+", "<C-a>")
@@ -19,10 +19,6 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 -- Split window
 keymap.set("n", "_", ":split<Return><C-w>w", { silent = true })
 keymap.set("n", "|", ":vsplit<Return><C-w>w", { silent = true })
-
--- Move window
-keymap.set("n", "<C-h>", "<C-w>h")
-keymap.set("n", "<C-l>", "<C-w>l")
 
 -- Resizing
 keymap.set("n", "<C-Up>", ":resize +2<CR>", { desc = "Increase window height" })
