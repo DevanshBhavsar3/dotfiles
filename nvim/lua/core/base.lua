@@ -27,6 +27,10 @@ vim.opt.wildoptions = "pum"
 vim.opt.pumblend = 5
 vim.opt.background = "dark"
 
+-- Vertical line
+vim.opt.colorcolumn = "80"
+vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = "lightgrey", bg = "lightgrey" })
+
 vim.wo.number = true
 vim.opt.relativenumber = true
 
@@ -51,10 +55,6 @@ vim.diagnostic.config({
 	underline = true,
 })
 
--- Enable spell check
-vim.opt.spell = true
-vim.opt.spelllang = { "en_us" }
-
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
@@ -63,3 +63,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.hl.on_yank()
 	end,
 })
+
+-- Netrw config
+vim.g.netrw_keepdir = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_list_hide = "(^|ss)\zs.S+"
+vim.g.netrw_localcopydircmd = "cp -r"
+vim.api.nvim_set_hl(0, "netrwMarkFile", { link = "Search" })

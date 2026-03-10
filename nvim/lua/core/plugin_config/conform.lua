@@ -10,6 +10,8 @@ require("conform").setup({
 		yaml = { "prettier" },
 		markdown = { "prettier" },
 		lua = { "stylua" },
+		go = { "gofmt" },
+		sql = { "sqlfmt" },
 	},
 })
 

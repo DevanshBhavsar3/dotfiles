@@ -13,11 +13,11 @@ local packer_bootstrap = ensure_packer()
 
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
-	use("stevearc/oil.nvim")
 	use("nvim-lualine/lualine.nvim")
 
 	-- colorschemes
 	use("bluz71/vim-moonfly-colors")
+	use("rebelot/kanagawa.nvim")
 	use("rose-pine/neovim")
 
 	use("nvim-treesitter/nvim-treesitter")

@@ -35,3 +35,31 @@ keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 -- Better indenting in visual mode
 keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
 keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
+
+-- Netrw
+keymap.set("n", "-", ":Explore! %:p:h<CR>")
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "netrw",
+	desc = "Better mappings for netrw",
+	callback = function()
+		local bind = function(lhs, rhs)
+			keymap.set("n", lhs, rhs, { remap = true, buffer = true })
+		end
+
+		bind("h", "-^")
+		bind("l", "<CR>")
+
+		bind("r", "R")
+		bind(".", "gh")
+		bind("P", "<C-w>z")
+
+		-- marks
+		bind("<TAB>", "mf")
+		bind("<S-TAB>", "mF")
+		bind("<Leader><TAB>", "mu")
+
+		-- create file
+		bind("n", "%:w<CR>")
+	end,
+})

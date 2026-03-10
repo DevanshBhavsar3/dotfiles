@@ -1,4 +1,3 @@
-require("core.plugin_config.oil")
 require("core.plugin_config.lualine")
 require("core.plugin_config.colorscheme")
 require("core.plugin_config.treesitter")
