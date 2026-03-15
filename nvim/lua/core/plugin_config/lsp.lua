@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "gopls", "ts_ls", "jsonls", "postgres_lsp" },
+	ensure_installed = { "lua_ls", "gopls", "ts_ls", "jsonls", "postgres_lsp", "html", "cssls" },
 })
 require("lspsaga").setup({
 	symbol_in_winbar = {
@@ -11,7 +11,7 @@ require("lspsaga").setup({
 	},
 })
 
-local servers = { "lua_ls", "gopls", "ts_ls", "jsonls", "postgres_lsp" }
+local servers = { "lua_ls", "gopls", "ts_ls", "jsonls", "postgres_lsp", "svelte", "tailwindcss", "html", "cssls" }
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 for _, name in ipairs(servers) do

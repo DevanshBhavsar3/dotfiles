@@ -11,7 +11,7 @@ require("conform").setup({
 		markdown = { "prettier" },
 		lua = { "stylua" },
 		go = { "gofmt" },
-		sql = { "sqlfmt" },
+		svelte = { "prettier" },
 	},
 })
 
