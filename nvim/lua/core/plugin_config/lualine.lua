@@ -16,9 +16,9 @@ require("lualine").setup({
 			"diff",
 			"diagnostics",
 		},
-		lualine_x = {},
+		lualine_x = { "encoding" },
 		lualine_y = { "filetype" },
-		lualine_z = { "%l:%c", "%p%%/%L" },
+		lualine_z = {},
 	},
 	inactive_sections = {
 		lualine_c = { "%f %y %m" },

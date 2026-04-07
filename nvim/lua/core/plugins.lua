@@ -19,6 +19,7 @@ return require("packer").startup(function(use)
 	use("bluz71/vim-moonfly-colors")
 	use("rebelot/kanagawa.nvim")
 	use("rose-pine/neovim")
+	use("RRethy/base16-nvim")
 
 	use("nvim-treesitter/nvim-treesitter")
 	use({
@@ -58,6 +59,7 @@ return require("packer").startup(function(use)
 	})
 	use("folke/snacks.nvim")
 	use("nickjvandyke/opencode.nvim")
+	use("github/copilot.vim")
 
 	if packer_bootstrap then
 		require("packer").sync()
