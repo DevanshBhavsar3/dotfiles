@@ -15,6 +15,7 @@ require("nvim-treesitter.config").setup({
 		"vim",
 		"vimdoc",
 		"sql",
+        "cpp",
 	},
 	sync_install = false,
 	auto_install = true,
@@ -24,7 +25,7 @@ require("nvim-treesitter.config").setup({
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "lua", "go", "ts", "json", "yml", "yaml", "sql", "svelte", "html", "css" },
+	pattern = { "lua", "go", "ts", "json", "yml", "yaml", "sql", "svelte", "html", "css", "cpp" },
 	callback = function()
 		vim.treesitter.start()
 	end,

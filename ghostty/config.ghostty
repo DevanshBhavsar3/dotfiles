@@ -1,0 +1,14 @@
+theme = light:iTerm2 Solarized Light,dark:Apple System Colors
+
+font-family = JetBrainsMonoNerdFont
+font-size = 17
+
+shell-integration-features = no-cursor
+cursor-style = block
+
+# window-decoration = none
+# gtk-titlebar = false
+
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig

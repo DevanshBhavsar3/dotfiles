@@ -16,10 +16,12 @@ return require("packer").startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 
 	-- colorschemes
+	use("folke/tokyonight.nvim")
 	use("bluz71/vim-moonfly-colors")
 	use("rebelot/kanagawa.nvim")
 	use("rose-pine/neovim")
 	use("RRethy/base16-nvim")
+    use({ "catppuccin/nvim", as = "catppuccin" })
 
 	use("nvim-treesitter/nvim-treesitter")
 	use({
