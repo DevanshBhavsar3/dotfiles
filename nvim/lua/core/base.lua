@@ -50,18 +50,18 @@ vim.opt.wildignore:append({ "*/node_modules/*" })
 vim.opt.termguicolors = true
 
 vim.diagnostic.config({
-	virtual_text = false,
-	signs = false,
-	underline = true,
+    virtual_text = false,
+    signs = false,
+    underline = true,
 })
 
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
-	callback = function()
-		vim.hl.on_yank()
-	end,
+    desc = "Highlight when yanking (copying) text",
+    group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+    callback = function()
+        vim.hl.on_yank()
+    end,
 })
 
 -- Netrw config

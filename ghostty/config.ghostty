@@ -1,4 +1,4 @@
-theme = light:iTerm2 Solarized Light,dark:Apple System Colors
+theme = Apple System Colors
 
 font-family = JetBrainsMonoNerdFont
 font-size = 17
