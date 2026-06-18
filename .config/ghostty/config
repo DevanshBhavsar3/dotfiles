@@ -45,7 +45,7 @@
 # theme = black-metal-gorgoroth
 theme = Adwaita Dark
 
-font-family = JetBrainsMono NF
+font-family = IosevkaTerm Nerd Font Mono
 adjust-cell-width = -5%
 font-size = 17
 
