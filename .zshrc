@@ -1,17 +1,21 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/home/devanshb/bin:$PATH
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# bun completions
+[ -s "/home/devanshb/.bun/_bun" ] && source "/home/devanshb/.bun/_bun"
+
+# bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
-
 # opencode
-export PATH=/home/devansh/.opencode/bin:$PATH
+export PATH=/home/devanshb/.opencode/bin:$PATH
+
+# docker
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -82,8 +86,8 @@ ZSH_THEME="nicoulaj"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions tmux)
-ZSH_TMUX_AUTOSTART=false
+plugins=(z git zsh-syntax-highlighting zsh-autosuggestions tmux)
+ZSH_TMUX_AUTOSTART=true
 
 source $ZSH/oh-my-zsh.sh
 
