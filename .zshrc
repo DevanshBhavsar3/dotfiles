@@ -123,3 +123,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias gc="cd ~/CodePlayground"
+alias hx="helix"

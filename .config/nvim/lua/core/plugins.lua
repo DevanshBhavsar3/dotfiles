@@ -62,6 +62,7 @@ return require("packer").startup(function(use)
 	use("folke/snacks.nvim")
 	use("nickjvandyke/opencode.nvim")
 	use("github/copilot.vim")
+    use("stevearc/oil.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()

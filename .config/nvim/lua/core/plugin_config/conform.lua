@@ -12,6 +12,7 @@ require("conform").setup({
 		lua = { "stylua" },
 		go = { "gofmt" },
 		svelte = { "prettier" },
+        rust = { "rustfmt" },
 	},
 })
 
