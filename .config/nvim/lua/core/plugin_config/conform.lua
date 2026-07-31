@@ -13,6 +13,9 @@ require("conform").setup({
 		go = { "gofmt" },
 		svelte = { "prettier" },
         rust = { "rustfmt" },
+        cpp = { "clang-format" },
+        h = { "clang-format" },
+		templ = { "prettier" },
 	},
 })
 
