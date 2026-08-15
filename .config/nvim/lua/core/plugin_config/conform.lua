@@ -15,8 +15,9 @@ require("conform").setup({
         rust = { "rustfmt" },
         cpp = { "clang-format" },
         h = { "clang-format" },
-		templ = { "prettier" },
-	},
+		templ = { "templ" },
+        astro = { "prettier" },
+    },
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
